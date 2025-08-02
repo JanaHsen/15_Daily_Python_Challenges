@@ -1,4 +1,4 @@
-# Solution to Question 1
+# Solution to Question 2
 import pandas as pd
 # Create the data according to the table provided
 
@@ -21,6 +21,5 @@ df['created_date'] = pd.to_datetime(df['created_date'])
 # Filter for October 2024
 october_groups = df[(df['created_date'].dt.month == 10) & (df['created_date'].dt.year == 2024)]
 
-# Get the maximum number of participants
-max_participants = october_groups['participant_count'].max()
-print('The maximum number of participants in October 2024 is ' , max_participants)
+average_num_participants = october_groups['participant_count'].mean()
+print ('The average number of participants in October 2024 is ', average_num_participants)
