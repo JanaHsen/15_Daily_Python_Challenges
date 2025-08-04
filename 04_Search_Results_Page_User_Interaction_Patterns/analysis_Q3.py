@@ -1,4 +1,4 @@
-# Solution to Question 2
+#Solution to Question 3
 
 import pandas as pd
 
@@ -97,5 +97,12 @@ average_interaction = cleaned_data.groupby('search_results_displayed')['interact
 # Rename columns for clarity
 average_interaction.columns = ['search_results_displayed', 'average_interaction_time']
 
-# Display the results sorted by search_results_displayed
-average_interaction.sort_values('search_results_displayed')
+
+# Sort the aggregated results by average interaction time (descending)
+optimal_results = average_interaction.dropna().sort_values(
+    'average_interaction_time', 
+    ascending=False
+)
+
+# Display the sorted results
+print(optimal_results)
