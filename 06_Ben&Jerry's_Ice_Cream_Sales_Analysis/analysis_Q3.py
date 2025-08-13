@@ -1,3 +1,5 @@
+#Solution to Question 3
+
 import pandas as pd
 
 # Create DataFrame from the provided data
